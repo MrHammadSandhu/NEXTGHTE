@@ -9,46 +9,46 @@ const Portfolio = () => {
       categoryKey: "category_power",
       items: [
         {
-          title: "UPS System",
+          title: "(UPS) in Saudi Arabia",
           titleKey: "title_ups_system",
           description:
-            "Our UPS ensures continuous power, offering peace of mind against unexpected outages and disruptions.",
+            "Invent Gulf Horizon Tele’s digital  UPS systems for each requirement, from industrial to modular solutions. As dealers for Schneider Electric and RELIABILITY POWER SYSTEMS, we are committed to remarkable power and unbeatable support.",
           descriptionKey: "description_ups_system",
           image: "ups.png",
           link: "/ups",
         },
         {
-          title: "Load Bank",
+          title: "Load Bank Rental Services",
           titleKey: "title_load_bank",
           description:
-            "Our load banks ensure reliable power for all your needs.",
+            "Gulf Horizon Tele provides reliable AC and DC load banks for sale and rental usage perfect for generator experimenting, data centers, and industrial usage. With 15+ years of expertise, we offer modified solutions and expert support.",
           descriptionKey: "description_load_bank",
           image: "/loadbank.png",
           link: "/loadbank",
         },
         {
-          title: "Batteries",
+          title: "Reliable Battery Solutions",
           titleKey: "title_batteries",
           description:
-            "Our batteries ensure reliable power for all your needs.",
+            "Gulf Horizon Tele is particularly in the highest battery solutions, providing VRLA, Lithium-ion, and industrial batteries. With 20+ years of expertise, we make, install, and continue energy-systematic systems that monitor your requirements.",
           descriptionKey: "description_batteries",
           image: "/batteries.png",
           link: "/loadbank",
         },
         {
-          title: "AVR's",
+          title: "Automatic Voltage Regulator (AVR) Services",
           titleKey: "title_avrs",
           description:
-            "Our AVRs and voltage stabilizers ensure stable power, protecting your equipment from voltage fluctuations.",
+            "At Gulf Horizon Tele, we are best at providing high-quality Automatic Voltage Regulators (AVRs) for homes, offices, and industrial applications. Save from your electrical systems with our remarkable solutions, containing 220V AVRs, 3-phase regulators, and generator-specific models.",
           descriptionKey: "description_avrs",
           image: "/avr.png",
           link: "/loadbank",
         },
         {
-          title: "Generators",
+          title: "Reliable Generator Solutions",
           titleKey: "title_generators",
           description:
-            "Our generators provide reliable backup power, ensuring your operations stay uninterrupted.",
+            "Gulf Horizon Tele provides the highest quality generator sales, rentals, maintenance, and spare parts guide to industrial, commercial, and domestic requirements. Even if you want diesel generators, portable solutions, or light tower rentals, we are committed to uninterrupted power with expert support and quick service.",
           descriptionKey: "description_generators",
           image: "/genraters.png",
           link: "/loadbank",
@@ -60,46 +60,46 @@ const Portfolio = () => {
       categoryKey: "category_security",
       items: [
         {
-          title: "CCTV",
+          title: "CCTV Systems Services",
           titleKey: "title_cctv",
           description:
-            "Quality is our legacy; trust in reliable, long-lasting CCTV systems.",
+            "Gulf HorizonTele provides premium CCTV solutions containing installation, maintenance, and digital custom plans for homes, businesses, and industries in Saudi Arabia. With expertise in guiding brands such as HikVision, we are committed to your property’s safety using the main parts of technology that fulfill your requirements.",
           descriptionKey: "description_cctv",
           image: "/cctv.png",
           link: "/cctv",
         },
         {
-          title: "Access Control",
+          title: "Access Control Systems",
           titleKey: "title_access_control",
           description:
-            "Excellence is our legacy; trust in secure, reliable access control systems.",
+            "Gulf Horizon Tele offers modern access control systems in Saudi Arabia, promoting biometric, mobile, and cloud-based solutions. Increase your security system with each level of technology and smooth integration.",
           descriptionKey: "description_access_control",
           image: "/accesscontroll.png",
           link: "/cctv",
         },
         {
-          title: "Fire Extinguishing Systems",
+          title: "Fire Fighting Systems",
           titleKey: "title_fire_extinguishing",
           description:
-            "Mastery reflects our legacy; trust in reliable fire extinguishing systems.",
+            "Gulf Horizon Tele delivers modern fire fighting systems that contain alarms, sprinklers, and suppression solutions, committed to security and compliance around Saudi Arabia.",
           descriptionKey: "description_fire_extinguishing",
           image: "/fire.png",
           link: "/cctv",
         },
         {
-          title: "Sound System",
+          title: "Sound System Services",
           titleKey: "title_sound_system",
           description:
-            "Immersive audio defines our legacy; trust in precision-engineered sound solutions.",
+            "Gulf Horizon Tele provides top-class sound system services in Saudi Arabia, promoting brands such as Sony, Bose, and JBL. Our service is from home theatres to car audio systems, we are committed to professional installation and affordable rates.",
           descriptionKey: "description_sound_system",
           image: "/sound.png",
           link: "/cctv",
         },
         {
-          title: "Cyber Security",
+          title: "Cybersecurity Services",
           titleKey: "title_cyber_security",
           description:
-            "Commitment shapes our legacy; trust in reliable cybersecurity measures.",
+            "Gulf Horizon Tele provides complete cybersecurity services in Saudi Arabia, containing risky assessment, incident response, and dangers management, committed to your business protection.",
           descriptionKey: "description_cyber_security",
           image: "/cybersecurity.png",
           link: "/cctv",
@@ -111,10 +111,10 @@ const Portfolio = () => {
       categoryKey: "category_it",
       items: [
         {
-          title: "Servers / Computers",
+          title: "Server and Computer Solutions",
           titleKey: "title_servers_computers",
           description:
-            "Dedication builds our legacy; count on us for reliable server and computer solutions.",
+            "Gulf Horizon Tele delivers high class servers, firewalls, desktops, and laptops for businesses throughout Saudi Arabia, committed to smooth operations with remarkable and safe technology solutions.",
           descriptionKey: "description_servers_computers",
           image: "/server.png",
           link: "/servercomputer",
@@ -129,10 +129,10 @@ const Portfolio = () => {
           link: "/servercomputer",
         },
         {
-          title: "Racks",
+          title: "Racks and Power Distribution Units (PDUs)",
           titleKey: "title_racks",
           description:
-            "Stability and organization shape our legacy; trust in durable and efficient rack solutions.",
+            "Gulf Horizon Tele provides modified server racks and intelligent PDUs for data centers, IT frameworks, and businesses throughout Saudi Arabia. Our solutions guarantee smooth power distribution, logical management, and excellent performance.",
           descriptionKey: "description_racks",
           image: "/racks.png",
           link: "/servercomputer",
@@ -171,24 +171,22 @@ const Portfolio = () => {
             className="text-lg sm:text-xl font-semibold text-secondary mb-2"
             data-translate-key="service"
           >
-            Let's make these solutions
+            Let’s Make These Solutions together.
           </h3>
           <h2
             className="text-3xl sm:text-5xl font-bold mb-4 text-primary"
             data-translate-key="serviceheading"
           >
-            What Solutions Do We Offer
+            What Solutions Do We Offer?
           </h2>
           <p
             className="lg:w-2/3 mx-auto text-base sm:text-lg text-textcolor mt-4"
             data-translate-key="servicedescription"
           >
-            We provide one stop specialized services in Power, Security & IT
-            products. Our solutions are designed to safeguard your systems and
-            data against potential threats, ensuring optimal security for your
-            operations. Additionally, our products deliver reliable and
-            efficient energy solutions to support your technological and
-            infrastructural requirements.
+            At Gulf Horizon Telecom Est, we deliver servers for particular
+            services in Power, Security, and IT products, guaranteeing smooth
+            operations while preventing prospective risks. Our solutions
+            contain:
           </p>
         </div>
 
