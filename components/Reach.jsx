@@ -25,7 +25,10 @@ const Reach = () => {
                 </g>
               </svg>
             </span>
-            <span className="font-semibold" data-translate-key="aboutvalue1">
+            <span
+              className="text-white text-base md:text-lg  font-semibold"
+              data-translate-key="aboutvalue1"
+            >
               Respect: hold various opinions and digital plans
             </span>
           </li>
@@ -49,7 +52,10 @@ const Reach = () => {
                 </g>
               </svg>
             </span>
-            <span className="font-semibold" data-translate-key="aboutvalue2">
+            <span
+              className="text-white text-base md:text-lg  font-semibold"
+              data-translate-key="aboutvalue2"
+            >
               Ownership: operating success with responsibility and getting
               perfect output.
             </span>
@@ -74,7 +80,10 @@ const Reach = () => {
                 </g>
               </svg>
             </span>
-            <span className="font-semibold" data-translate-key="aboutvalue3">
+            <span
+              className="text-white text-base md:text-lg  font-semibold"
+              data-translate-key="aboutvalue3"
+            >
               Fairness: Confirm honesty and believe in each interactivity.
             </span>
           </li>
@@ -98,7 +107,10 @@ const Reach = () => {
                 </g>
               </svg>
             </span>
-            <span className="font-semibold" data-translate-key="aboutvalue4">
+            <span
+              className="text-white text-base md:text-lg  font-semibold"
+              data-translate-key="aboutvalue4"
+            >
               Quality: Construct an inheritance of excellence with steady
               commitment.
             </span>

@@ -4,53 +4,13 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const containerAnimation = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-      staggerChildren: 0.3,
-    },
-  },
-};
-
-const childAnimation = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
-
 const ContactUs = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
-
   return (
-    <motion.div
-      ref={ref}
-      className="bg-light bg-center bg-cover py-16"
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      exit="hidden"
-      variants={containerAnimation}
-    >
+    <div className="bg-light bg-center bg-cover py-16">
       <div className="container mx-auto px-4 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Contact Sidebar */}
-          <motion.div
-            variants={childAnimation}
-            className="bg-primary text-center rounded-3xl p-8 pb-0"
-          >
+          <div className="bg-primary text-center rounded-3xl p-8 pb-0">
             {/* Phone Info */}
             <div className="my-8">
               <img
@@ -89,18 +49,15 @@ const ContactUs = () => {
                 className="grayscale hover:grayscale-0 transition"
               />
             </div>
-          </motion.div>
+          </div>
 
           {/* Contact Form */}
-          <motion.div
-            variants={childAnimation}
-            className="lg:col-span-2 bg-white rounded-3xl p-8 lg:p-14"
-          >
+          <div className="lg:col-span-2 bg-white rounded-3xl p-8 lg:p-14">
             <div className="mb-8">
-              <h3 className="text-secondary text-lg uppercase mb-4 font-semibold">
+              <h3 className="text-secondary sm:text-lg md:text-xl font-semibold">
                 Contact Us
               </h3>
-              <h2 className="text-primary text-3xl md:text-5xl font-bold">
+              <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
                 Get in touch with us
               </h2>
             </div>
@@ -173,10 +130,10 @@ const ContactUs = () => {
                 </Link>
               </div>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

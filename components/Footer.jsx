@@ -1,41 +1,16 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { motion } from "motion/react";
-import { useInView } from "react-intersection-observer";
 import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
-  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
-
-  const containerAnimation = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, staggerChildren: 0.2 },
-    },
-  };
-
-  const childAnimation = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
-  };
-
   return (
-    <footer className="bg-primary pt-4 sm:pt-6 lg:pt-8" ref={ref}>
-      <motion.div
-        className="pt-12"
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        variants={containerAnimation}
-      >
+    <footer className="bg-primary pt-4 sm:pt-6 lg:pt-8">
+      <div className="pt-12">
         <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
           <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
-            <motion.div
-              className="col-span-full lg:col-span-2"
-              variants={childAnimation}
-            >
+            {/* About Section */}
+            <div className="col-span-full lg:col-span-2">
               <div className="mb-4 lg:-mt-2">
                 <a
                   href="/"
@@ -53,10 +28,10 @@ const Footer = () => {
                 for long-term service.
               </p>
               <SocialIcons />
-            </motion.div>
+            </div>
 
             {/* Our Services Section */}
-            <motion.div variants={childAnimation}>
+            <div>
               <div className="mb-4 font-bold uppercase tracking-widest text-secondary text-xl">
                 Our Services
               </div>
@@ -77,10 +52,10 @@ const Footer = () => {
                   </Link>
                 ))}
               </nav>
-            </motion.div>
+            </div>
 
             {/* Company Section */}
-            <motion.div variants={childAnimation}>
+            <div>
               <div className="mb-4 font-bold uppercase tracking-widest text-secondary text-xl">
                 Company
               </div>
@@ -98,10 +73,10 @@ const Footer = () => {
                   )
                 )}
               </nav>
-            </motion.div>
+            </div>
 
             {/* Contact Us Section */}
-            <motion.div variants={childAnimation}>
+            <div>
               <div className="mb-4 font-bold uppercase tracking-widest text-secondary text-xl">
                 Contact Us
               </div>
@@ -129,17 +104,14 @@ const Footer = () => {
                   Sultan St., Jeddah 21433
                 </Link>
               </nav>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            className="border-t py-8 text-center text-[16px] text-white"
-            variants={childAnimation}
-          >
+          <div className="border-t py-8 text-center text-[16px] text-white">
             Copyright © 2024 GHTE. All Rights Reserved.
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </footer>
   );
 };

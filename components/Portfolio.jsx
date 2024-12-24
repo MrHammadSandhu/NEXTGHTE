@@ -1,32 +1,5 @@
 "use client";
 import React, { useState, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-
-const containerAnimation = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-      staggerChildren: 0.3,
-    },
-  },
-};
-
-const childAnimation = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
 
 const Portfolio = () => {
   const services = [
@@ -175,46 +148,25 @@ const Portfolio = () => {
       : services.find((service) => service.category === selectedCategory)
           ?.items || [];
 
-  const controls = useAnimation(); // For controlling animations
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Trigger every time the element enters or leaves
-    threshold: 0.1, // 30% of the section is visible
-  });
-
-  // Trigger animation based on inView
-  React.useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [inView, controls]);
-
   return (
-    <motion.div
-      ref={ref}
-      className="py-16 bg-light"
-      variants={containerAnimation}
-      initial="hidden"
-      animate={controls}
-    >
+    <div className="py-16 bg-light">
       <div className="container mx-auto px-4 sm:px-2 md:px-4 lg:px-8">
         {/* Heading Section */}
-        <motion.div className="text-center mb-12" variants={childAnimation}>
+        <div className="text-center mb-12">
           <h3
-            className="text-lg sm:text-xl font-semibold text-secondary mb-2"
+            className="text-secondary sm:text-lg md:text-xl font-semibold mb-2"
             data-translate-key="service"
           >
             Let’s Make These Solutions Together.
           </h3>
           <h2
-            className="text-3xl sm:text-5xl font-bold mb-4 text-primary"
+            className="text-3xl sm:text-3xl px-4 md:text-4xl lg:text-5xl font-bold my-4 text-primary"
             data-translate-key="serviceheading"
           >
             What Solutions Do We Offer?
           </h2>
           <p
-            className="lg:w-2/3 mx-auto text-base sm:text-lg text-textcolor mt-4"
+            className="lg:w-2/3 mx-auto text-textcolor text-lg lg:text-xl mt-4"
             data-translate-key="servicedescription"
           >
             At Gulf Horizon Telecom Est, we deliver servers for particular
@@ -222,13 +174,10 @@ const Portfolio = () => {
             operations while preventing prospective risks. Our solutions
             contain:
           </p>
-        </motion.div>
+        </div>
 
         {/* Category Filter */}
-        <motion.div
-          className="mb-8 flex flex-wrap justify-center"
-          variants={childAnimation}
-        >
+        <div className="mb-8 flex flex-wrap justify-center">
           <ul className="flex space-x-4">
             <li
               className={`px-4 py-2 rounded cursor-pointer ${
@@ -256,18 +205,14 @@ const Portfolio = () => {
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
 
         {/* Services Grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-8 gap-x-3"
-          variants={containerAnimation}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-8 gap-x-3">
           {filteredServices.map((service, index) => (
-            <motion.div
+            <div
               key={index}
               className="relative overflow-hidden mx-auto max-w-sm text-center group"
-              variants={childAnimation}
             >
               <div className="overflow-hidden rounded-3xl relative">
                 <a href={service.link} className="block relative">
@@ -305,11 +250,11 @@ const Portfolio = () => {
                   />
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
