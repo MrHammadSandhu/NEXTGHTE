@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
-  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: false });
+  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   const containerAnimation = {
     hidden: { opacity: 0, y: 50 },

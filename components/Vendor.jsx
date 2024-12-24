@@ -1,29 +1,48 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import "tailwindcss/tailwind.css";
-import { motion } from "motion/react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const VendorSlider = () => {
-  const fadeIn = {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.3,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView, controls]);
+
+  const titleDescriptionVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
-  const staggerContainer = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.2 } },
+  const logoVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
-    <motion.section
-      className="py-20"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
-      variants={staggerContainer}
-    >
+    <section ref={ref} className="py-20">
       <div className="container mx-auto">
         {/* Title and Description */}
-        <motion.div className="text-center mb-8" variants={fadeIn}>
+        <motion.div
+          className="text-center mb-8"
+          initial="hidden"
+          animate={controls}
+          variants={titleDescriptionVariants}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-8">
             PRINCIPAL PARTNERS
           </h2>
@@ -36,30 +55,30 @@ const VendorSlider = () => {
           </p>
         </motion.div>
 
-        {/* Slider Animation */}
-        <motion.div
-          className="overflow-hidden relative mt-20"
-          variants={fadeIn}
-        >
+        {/* Slider */}
+        <div className="overflow-hidden relative mt-20">
           <div className="flex animate-scroll whitespace-nowrap">
             {Array(14)
               .fill(null)
               .map((_, index) => (
-                <div
+                <motion.div
                   key={index}
                   className="flex-none w-48 h-24 mx-4 rounded-md flex items-center justify-center"
+                  initial="hidden"
+                  animate={controls}
+                  variants={logoVariants}
                 >
                   <img
                     src={`/vendor${(index % 8) + 1}.png`}
                     alt={`Vendor ${(index % 8) + 1}`}
                     className="object-contain max-h-full"
                   />
-                </div>
+                </motion.div>
               ))}
           </div>
           <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-white to-transparent"></div>
           <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-white to-transparent"></div>
-        </motion.div>
+        </div>
       </div>
 
       <style jsx>{`
@@ -76,7 +95,7 @@ const VendorSlider = () => {
           animation: scroll 15s linear infinite;
         }
       `}</style>
-    </motion.section>
+    </section>
   );
 };
 

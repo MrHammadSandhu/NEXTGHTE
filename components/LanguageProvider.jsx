@@ -32,9 +32,6 @@ export const LanguageProvider = ({ children }) => {
       const key = element.getAttribute("data-translate-key");
       if (translations[key]) {
         element.innerText = translations[key];
-      } else {
-        // Fallback to the original text if no translation is available
-        element.innerText = element.getAttribute("data-default-text");
       }
     });
   }, [translations]);

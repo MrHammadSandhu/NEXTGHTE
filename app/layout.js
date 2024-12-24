@@ -9,8 +9,11 @@ const dm_sans = DM_Sans({
 });
 
 export const metadata = {
-  title:
-    " Power, Security & IT Solutions Around Saudi Arabia | Gulf Horizon Telecom Est",
+  title: {
+    default:
+      "Power, Security & IT Solutions Around Saudi Arabia | Gulf Horizon Telecom Est",
+    template: "%s",
+  },
   description:
     "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, secure smooth operations in Saudi Arabia.",
 };

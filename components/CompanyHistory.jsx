@@ -1,39 +1,39 @@
 "use client";
 import React from "react";
-import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 import CompanyBTn from "./CompanyBTn";
 
+const containerAnimation = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8, // Increased duration for smoothness
+      ease: "easeOut", // Smooth easing
+      staggerChildren: 0.3, // Slightly more delay between child animations
+    },
+  },
+};
+
+const childAnimation = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6, // Smooth entry for each child
+      ease: "easeOut",
+    },
+  },
+};
+
 const CompanyHistory = () => {
-  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: false });
-
-  // Animation Variants
-  const textAnimation = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6, delay: 0.2 },
-    },
-  };
-
-  const imageAnimation = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.6, delay: 0.4 },
-    },
-  };
-
-  const experienceBoxAnimation = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, delay: 0.6 },
-    },
-  };
+  const [ref, inView] = useInView({
+    threshold: 0.1, // Start animation when 10% of the element is in view
+    triggerOnce: true, // Allow repeated animations
+  });
 
   return (
     <motion.div
@@ -41,10 +41,12 @@ const CompanyHistory = () => {
       className="container mx-auto px-4"
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
+      exit="hidden"
+      variants={containerAnimation}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Content Section */}
-        <motion.div variants={textAnimation}>
+        <motion.div variants={childAnimation}>
           {/* Section Title */}
           <div>
             <h3 className="text-base md:text-lg font-semibold text-secondary mb-2">
@@ -75,7 +77,7 @@ const CompanyHistory = () => {
         </motion.div>
 
         {/* Image Section */}
-        <motion.div className="relative" variants={imageAnimation}>
+        <motion.div className="relative" variants={childAnimation}>
           <div className="relative overflow-hidden rounded-lg shadow-lg">
             <img
               src="/about3.png"
@@ -85,15 +87,12 @@ const CompanyHistory = () => {
           </div>
 
           {/* Experience Box */}
-          <motion.div
-            className="absolute bottom-0 left-0 bg-primary text-white px-6 py-4 rounded-tr-lg"
-            variants={experienceBoxAnimation}
-          >
+          <div className="absolute bottom-0 left-0 bg-primary text-white px-6 py-4 rounded-tr-lg">
             <h3 className="text-3xl lg:text-5xl font-bold">
               <span className="counter">20</span>+
             </h3>
             <p className="text-base md:text-lg">Years of Experience</p>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </motion.div>

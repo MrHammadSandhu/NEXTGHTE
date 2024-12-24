@@ -1,43 +1,52 @@
 "use client";
-import React from "react";
-import { motion } from "motion/react";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+const cardAnimation = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
 const MissionVision = () => {
-  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: false });
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1, // Animation triggers when 30% of the section is visible
+  });
 
-  // Animation Variants
-  const containerAnimation = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, staggerChildren: 0.2 },
-    },
-  };
-
-  const childAnimation = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
-  };
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView, controls]);
 
   return (
-    <motion.section
-      ref={ref}
-      className="py-44"
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      variants={containerAnimation}
-    >
+    <section ref={ref} className="py-44">
       <div className="container mx-auto px-4">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerAnimation}
+          initial="hidden"
+          animate={controls}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2, // Stagger animation for child elements
+              },
+            },
+          }}
         >
           {/* Mission */}
           <motion.div
             className="bg-white px-8 rounded-3xl shadow-lg flex flex-col items-start border border-textcolor/50 py-16"
-            variants={childAnimation}
+            variants={cardAnimation}
           >
             <div className="mb-4 flex justify-center">
               <img
@@ -59,7 +68,7 @@ const MissionVision = () => {
           {/* Vision */}
           <motion.div
             className="bg-white px-8 rounded-3xl shadow-lg flex flex-col items-start border border-textcolor/50 py-16"
-            variants={childAnimation}
+            variants={cardAnimation}
           >
             <div className="mb-4 flex justify-center">
               <img
@@ -81,7 +90,7 @@ const MissionVision = () => {
           {/* Values */}
           <motion.div
             className="bg-white px-8 rounded-3xl shadow-lg flex flex-col items-start border border-textcolor/50 py-16"
-            variants={childAnimation}
+            variants={cardAnimation}
           >
             <div className="mb-4 flex justify-center">
               <img
@@ -101,7 +110,7 @@ const MissionVision = () => {
           </motion.div>
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

@@ -24,7 +24,7 @@ const CtaBox = () => {
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }} // Ensure animation triggers multiple times
+      viewport={{ once: true, amount: 0.1 }} // Ensure animation triggers multiple times
       className="bg-primary my-20 p-8 sm:p-4 relative"
     >
       <div className="container mx-auto">

@@ -1,33 +1,55 @@
-import Link from "next/link";
+"use client";
 import React from "react";
-import { motion } from "motion/react";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+const containerAnimation = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const childAnimation = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 const ContactUs = () => {
-  // Footer Animation Variants (same as before)
-  const fadeInFromBottom = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
-  const staggerContainer = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.2 } },
-  };
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
   return (
     <motion.div
+      ref={ref}
       className="bg-light bg-center bg-cover py-16"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }} // Ensure animation repeats on scroll
-      variants={staggerContainer} // Apply the stagger animation to child elements
+      animate={inView ? "visible" : "hidden"}
+      exit="hidden"
+      variants={containerAnimation}
     >
       <div className="container mx-auto px-4 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Contact Sidebar */}
           <motion.div
+            variants={childAnimation}
             className="bg-primary text-center rounded-3xl p-8 pb-0"
-            variants={fadeInFromBottom} // Apply fadeIn animation
           >
             {/* Phone Info */}
             <div className="my-8">
@@ -71,8 +93,8 @@ const ContactUs = () => {
 
           {/* Contact Form */}
           <motion.div
+            variants={childAnimation}
             className="lg:col-span-2 bg-white rounded-3xl p-8 lg:p-14"
-            variants={fadeInFromBottom} // Apply fadeIn animation
           >
             <div className="mb-8">
               <h3 className="text-secondary text-lg uppercase mb-4 font-semibold">
@@ -83,85 +105,74 @@ const ContactUs = () => {
               </h2>
             </div>
 
-            <motion.form
-              id="inquiry-form"
-              className="space-y-6"
-              variants={staggerContainer} // Apply stagger animation to form inputs
-            >
+            <form id="inquiry-form" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.input
+                <input
                   type="text"
                   name="name"
                   id="name"
                   className="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-primary"
                   placeholder="Enter your name"
                   required
-                  variants={fadeInFromBottom} // Apply fadeIn animation to inputs
                 />
-                <motion.input
+                <input
                   type="email"
                   name="email"
                   id="email"
                   className="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-primary"
                   placeholder="Enter your email"
                   required
-                  variants={fadeInFromBottom} // Apply fadeIn animation to inputs
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.input
+                <input
                   type="text"
                   name="phone"
                   id="phone"
                   className="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-primary"
                   placeholder="Phone number"
                   required
-                  variants={fadeInFromBottom} // Apply fadeIn animation to inputs
                 />
-                <motion.input
+                <input
                   type="text"
                   name="subject"
                   id="subject"
                   className="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-primary"
                   placeholder="Subject"
                   required
-                  variants={fadeInFromBottom} // Apply fadeIn animation to inputs
                 />
               </div>
 
-              <motion.textarea
+              <textarea
                 name="msg"
                 id="msg"
                 rows="4"
                 className="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-primary"
                 placeholder="Message"
                 required
-                variants={fadeInFromBottom} // Apply fadeIn animation to textarea
-              ></motion.textarea>
+              ></textarea>
 
               <div className="flex justify-start">
-                <motion.div variants={fadeInFromBottom}>
-                  <Link
-                    href="project.html"
-                    className="group relative text-white flex items-center justify-between py-3 px-8 rounded-xl border-light border-[1px] bg-secondary overflow-hidden transition-all duration-300"
-                  >
-                    {/* Sliding Background */}
-                    <span className="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                <Link
+                  href="project.html"
+                  className="group relative text-white flex items-center justify-between py-3 px-8 rounded-xl border-light border-[1px] bg-secondary overflow-hidden transition-all duration-300"
+                >
+                  {/* Sliding Background */}
+                  <span className="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
 
-                    {/* Button Text */}
-                    <span className="relative z-10">Submit</span>
+                  {/* Button Text */}
+                  <span className="relative z-10">Submit</span>
 
-                    {/* Arrow Icon */}
-                    <img
-                      src="/arrow.svg"
-                      alt="svg"
-                      className="ml-2 relative z-10 transform transition-transform duration-300 group-hover:translate-x-2"
-                    />
-                  </Link>
-                </motion.div>
+                  {/* Arrow Icon */}
+                  <img
+                    src="/arrow.svg"
+                    alt="svg"
+                    className="ml-2 relative z-10 transform transition-transform duration-300 group-hover:translate-x-2"
+                  />
+                </Link>
               </div>
-            </motion.form>
+            </form>
           </motion.div>
         </div>
       </div>
