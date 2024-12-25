@@ -3,17 +3,22 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import LanguageTranslator from "./LanguageTranslator";
+import { useRouter } from "next/navigation";
 
 const CustomLink = ({ href, title, className = "", toggle }) => {
-  const handleClick = () => {
-    if (toggle) toggle();
-  };
+  const router = useRouter();
+  // const handleClick = () => {
+  //   if (toggle) toggle();
+
+  // };
 
   return (
-    <Link
-      href={href}
+    <button
       className={`${className} relative group text-[18px] text-light hover:text-secondary`}
-      onClick={handleClick}
+      // onClick={handleClick}
+      onClick={() => {
+        router.push(`${href}`);
+      }}
     >
       {title}
       <span
@@ -21,13 +26,14 @@ const CustomLink = ({ href, title, className = "", toggle }) => {
       >
         &nbsp;
       </span>
-    </Link>
+    </button>
   );
 };
 
 const Navbar = () => {
   const [open, setOpen] = useState(false); // Mobile menu state
   const [activeDropdown, setActiveDropdown] = useState(null); // Track which dropdown is open
+  const router = useRouter();
 
   const toggleMenu = () => {
     setOpen(!open);
@@ -101,12 +107,14 @@ const Navbar = () => {
             <div className="absolute hidden group-hover:block bg-primary text-light shadow-lg py-4 rounded-lg w-[200px] -left-5">
               {category === "Power" && (
                 <>
-                  <Link
-                    href="/projects/project1"
+                  <button
+                    onClick={() => {
+                      router.push("/ups-saudi-arabia");
+                    }}
                     className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
                   >
                     UPS System
-                  </Link>
+                  </button>
                   <Link
                     href="/projects/project1"
                     className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"

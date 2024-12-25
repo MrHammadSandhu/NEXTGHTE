@@ -12,7 +12,7 @@ export const metadata = {
   title: {
     default:
       "Power, Security & IT Solutions Around Saudi Arabia | Gulf Horizon Telecom Est",
-    template: "%s",
+    template: "%s -  Gulf Horizon Telecom Est",
   },
   description:
     "Gulf Horizon Telecom Est offers top power, security, and IT solutions, from UPS and generators to cybersecurity and CCTV systems, secure smooth operations in Saudi Arabia.",

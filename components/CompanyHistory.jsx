@@ -1,52 +1,13 @@
 "use client";
 import React from "react";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
 import CompanyBTn from "./CompanyBTn";
 
-const containerAnimation = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8, // Increased duration for smoothness
-      ease: "easeOut", // Smooth easing
-      staggerChildren: 0.3, // Slightly more delay between child animations
-    },
-  },
-};
-
-const childAnimation = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.6, // Smooth entry for each child
-      ease: "easeOut",
-    },
-  },
-};
-
 const CompanyHistory = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.1, // Start animation when 10% of the element is in view
-    triggerOnce: true, // Allow repeated animations
-  });
-
   return (
-    <motion.div
-      ref={ref}
-      className="container mx-auto px-4"
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      exit="hidden"
-      variants={containerAnimation}
-    >
+    <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Content Section */}
-        <motion.div variants={childAnimation}>
+        <div>
           {/* Section Title */}
           <div>
             <h3 className="text-base md:text-lg font-semibold text-secondary mb-2">
@@ -74,10 +35,10 @@ const CompanyHistory = () => {
           <div className="flex flex-wrap items-center gap-6">
             <CompanyBTn />
           </div>
-        </motion.div>
+        </div>
 
         {/* Image Section */}
-        <motion.div className="relative" variants={childAnimation}>
+        <div className="relative">
           <div className="relative overflow-hidden rounded-lg shadow-lg">
             <img
               src="/about3.png"
@@ -93,9 +54,9 @@ const CompanyHistory = () => {
             </h3>
             <p className="text-base md:text-lg">Years of Experience</p>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

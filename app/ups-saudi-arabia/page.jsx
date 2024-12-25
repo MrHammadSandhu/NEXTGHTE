@@ -1,4 +1,4 @@
-"use client";
+import Advantages from "@/components/Advantages";
 import CtaBox from "@/components/CtaBox";
 import PageHeader from "@/components/PageHeader";
 import ServiceBenefit from "@/components/ServiceBenefit";
@@ -6,6 +6,14 @@ import ServiceSingle from "@/components/ServiceSingle";
 import VendorSlider from "@/components/Vendor";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import React from "react";
+
+export const metadata = {
+  title: {
+    absolute: "UPS Saudi Arabia - Reliable Systems & Services",
+  },
+  description:
+    "Explore Gulf Horizon Telecom Est UPS systems in Saudi Arabia, including outdoor, modular, and industrial solutions. Authorized dealers for Schneider Electric and RPS.",
+};
 
 const page = () => {
   const images = ["/ups1.png", "/ups2.png", "/ups3.png"];
@@ -108,6 +116,7 @@ const page = () => {
         features={features}
         categoryTitle={categoryTitle}
       />
+
       <ServiceBenefit items={benefitItems}></ServiceBenefit>
       <WhyChooseUs
         heading="Innovation solutions"

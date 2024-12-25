@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import Advantages from "./Advantages";
 
 const ServiceSingle = ({
   images = [],
@@ -33,7 +34,6 @@ const ServiceSingle = ({
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
-
   return (
     <div className="py-16">
       <div className="container mx-auto px-4">
@@ -159,6 +159,8 @@ const ServiceSingle = ({
                 ))}
               </ul>
             </div>
+
+            <Advantages />
           </div>
         </div>
       </div>
