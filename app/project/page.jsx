@@ -196,12 +196,12 @@ const page = () => {
   };
   return (
     <>
-      <PageHeader
+      {/* <PageHeader
         title="Our Projects"
         backgroundImage="/projectbanner.png"
         backto="Home"
         breadcrumbs={[{ name: "PROJECTS", link: "", active: true }]}
-      />
+      /> */}
       <div className="py-16">
         <div className="container mx-auto px-4 sm:px-2 md:px-4 lg:px-8">
           <div className="text-center mb-12">

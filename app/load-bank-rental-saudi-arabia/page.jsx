@@ -28,7 +28,7 @@ const page = () => {
         active: true,
       },
     ],
-    backgroundImage: "/upsbanner.jpg",
+    backgroundImage: "/loadbankbanner.png",
   };
   const Sidebarcategories = {
     heading: "Other Power Products",

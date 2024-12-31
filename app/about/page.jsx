@@ -18,14 +18,24 @@ export const metadata = {
 };
 
 const page = () => {
+  const pageHeader = {
+    title: "About Us",
+    titleKey: "about_title",
+    backto: "Home",
+    backtokey: "home",
+    breadcrumbs: [
+      {
+        name: "About Us",
+        titlekey: "about_title",
+        link: "/",
+        active: true,
+      },
+    ],
+    backgroundImage: "/about.png",
+  };
   return (
     <>
-      <PageHeader
-        title="About Us"
-        backgroundImage="/about.png"
-        backto="Home"
-        breadcrumbs={[{ name: "About us", link: "", active: true }]}
-      />
+      <PageHeader pageHeader={pageHeader} />
 
       <div className="">
         <About />
