@@ -11,6 +11,29 @@ import VendorSlider from "@/components/Vendor";
 import ContactUs from "@/components/ContactUs";
 
 export default function Home() {
+  const whychooseus = [
+    {
+      heading: "Complete Power, Security, and IT Solutions",
+      titleKey: "main_page_why_choose_title",
+      descriptionKey: "main_page_why_choose_content",
+      description:
+        "At Gulf Horizon Telecom Est, we provide a large variety of services, containing uninterrupted power supply (UPS) systems, cybersecurity solutions, CCTV systems, and the highest working IT and networking equipment. We have a commitment to smooth operations for businesses in Saudi Arabia with assisting, trusted solutions for each requirement.",
+    },
+    {
+      heading: "Expertise and Experience You Can Trust",
+      titleKey: "main_page_expertise_and_experience_title",
+      descriptionKey: "main_page_expertise_and_experience_content",
+      description:
+        "With more than 17 years of experience, we have fully more than 1,000 projects, earning the belief of 400+ long-term clients. Our team provides high-quality, customized solutions using digital technologies, guaranteeing that your power, security, and IT infrastructure work smoothly and safely.",
+    },
+    {
+      heading: "End-to-End Services and Support",
+      titleKey: "main_page_end_to_end_services_title",
+      descriptionKey: "main_page_end_to_end_services_content",
+      description:
+        "From installation to post-sales support, Gulf Horizon Telecom Est provides 24/7 customer service and expert assistance in every step of your project. We partner with guiding brands such as Schneider Electric, HikVision, and Sony to offer top-class products and guarantee your structure's longevity and trust.",
+    },
+  ];
   return (
     <>
       <div className="relative overflow-hidden bg-cover bg-center bg-no-repeat md:mt-10 md:mx-10 md:rounded-[40px] px-4">
@@ -75,20 +98,7 @@ export default function Home() {
 
       <About />
       <Portfolio />
-      <WhyChooseUs
-        heading="Complete Power, Security, and IT Solutions"
-        datatranslatekeyheading="main_page_why_choose_title"
-        text="At Gulf Horizon Telecom Est, we provide a large variety of services, containing uninterrupted power supply (UPS) systems, cybersecurity solutions, CCTV systems, and the highest working IT and networking equipment. We have a commitment to smooth operations for businesses in Saudi Arabia with assisting, trusted solutions for each requirement."
-        datatranslatekeytext="main_page_why_choose_content"
-        heading2="Expertise and Experience You Can Trust"
-        datatranslatekeyheading2="main_page_expertise_and_experience_title"
-        text2="With more than 17 years of experience, we have fully more than 1,000 projects, earning the belief of 400+ long-term clients. Our team provides high-quality, customized solutions using digital technologies, guaranteeing that your power, security, and IT infrastructure work smoothly and safely."
-        datatranslatekeytext2="main_page_expertise_and_experience_content"
-        heading3="End-to-End Services and Support"
-        datatranslatekeyheading3="main_page_end_to_end_services_title"
-        text3="From installation to post-sales support, Gulf Horizon Telecom Est provides 24/7 customer service and expert assistance in every step of your project. We partner with guiding brands such as Schneider Electric, HikVision, and Sony to offer top-class products and guarantee your structure's longevity and trust."
-        datatranslatekeytext3="main_page_end_to_end_services_content"
-      />
+      <WhyChooseUs whychooseus={whychooseus} />
       <ProjectsSection />
       <CtaBox />
       <VendorSlider />

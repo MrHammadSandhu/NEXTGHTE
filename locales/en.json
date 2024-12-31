@@ -1,4 +1,5 @@
 {
+  "home": "Home",
   "welcome": "Welcome to Gulf Horizon Telecom Est",
   "description": "Your One-Stop Engineering Solution for Power, Security & IT Across the Kingdom At Gulf Horizon Telecom Est, we are best at providing perfect and reliable solutions for power security systems, IT infrastructure, and advanced security technologies. Even if you want uninterrupted energy, dependable data protection, or digital IT support, we are committed to ensuring your operations work smoothly and safely.",
   "welcome_heading": "Explore how Gulf Horizon Telecom Est can help you achieve your goals.",
@@ -167,5 +168,14 @@
   "modular_ups_title": "Modular UPS Solutions",
   "modular_ups_description": "Scalability is essential for businesses with growing power demands. Our modular UPS systems are designed to adapt to your requirements. These solutions offer scalable configurations, making them ideal for data centers, corporate facilities, and more.",
   "data_center_ups_title": "Data Center UPS Systems",
-  "data_center_ups_description": "Our data center UPS solutions are designed for harsh environments with capacities ranging from 600VA to 2 MVA. These high-power capacity systems ensure your IT systems operate smoothly and safely to protect your vital data."
+  "data_center_ups_description": "Our data center UPS solutions are designed for harsh environments with capacities ranging from 600VA to 2 MVA. These high-power capacity systems ensure your IT systems operate smoothly and safely to protect your vital data.",
+
+  "advantages_of_ups_title": "Advantages of UPS Systems",
+  "advantages_of_ups_description": "Protect your operations with the perfect UPS systems and services in Saudi Arabia. Even if you want an industrial UPS, a data centre UPS, or temporary UPS rentals, Gulf Horizon Telecom Est has you modified. Contact us today to fulfil your requirements and explain why we are the trusted choice for power protection solutions throughout the region.",
+  "data_protection_title": "Data Protection",
+  "data_protection_description": "It prevents data loss and also complete consumption against the powerful system.",
+  "equipment_protection_title": "Equipment Protection",
+  "equipment_protection_description": "Your equipment protection is our top priority. It provides your system with power skips and surgeries.",
+  "compliance_title": "Compliance",
+  "compliance_description": "It supports companies in fulfilment of regulatory requirements and data safety."
 }

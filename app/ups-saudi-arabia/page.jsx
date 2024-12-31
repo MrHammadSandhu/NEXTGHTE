@@ -1,4 +1,3 @@
-import Advantages from "@/components/Advantages";
 import CtaBox from "@/components/CtaBox";
 import PageHeader from "@/components/PageHeader";
 import ServiceBenefit from "@/components/ServiceBenefit";
@@ -16,6 +15,21 @@ export const metadata = {
 };
 
 const page = () => {
+  const pageHeader = {
+    title: "UPS System",
+    titleKey: "ups_system_title",
+    backto: "Home",
+    backtokey: "home",
+    breadcrumbs: [
+      {
+        name: "UPS System",
+        titlekey: "ups_system_title",
+        link: "/",
+        active: true,
+      },
+    ],
+    backgroundImage: "/upsbanner.jpg",
+  };
   const Sidebarcategories = {
     heading: "Other Power Products",
     titleKey: "other_power_products_title",
@@ -28,7 +42,7 @@ const page = () => {
       {
         name: "Load Banks",
         titleKey: "Load_Banks",
-        link: "/",
+        link: "/load-bank-rental-saudi-arabia",
       },
       {
         name: "Generators",
@@ -83,68 +97,76 @@ const page = () => {
     },
   };
 
-  const benefitItems = [
+  const benefitItems = {
+    heading: "Advantages of UPS Systems",
+    titleKey: "advantages_of_ups_title",
+    descriptionKey: "advantages_of_ups_description",
+    description:
+      "Protect your operations with the perfect UPS systems and services in Saudi Arabia. Even if you want an industrial UPS, a data centre UPS, or temporary UPS rentals, Gulf Horizon Telecom Est has you modified. Contact us today to fulfil your requirements and explain why we are the trusted choice for power protection solutions throughout the region.",
+    details: [
+      {
+        icon: "/icon-service-benefit-1.svg",
+        heading: "Data Protection",
+        titleKey: "data_protection_title",
+        descriptionKey: "data_protection_description",
+        description:
+          "it prevents data loss and also complete consumption against the powerful system.",
+      },
+      {
+        icon: "/icon-service-benefit-2.svg",
+        heading: "Equipment Protection",
+        titleKey: "equipment_protection_title",
+        descriptionKey: "equipment_protection_description",
+        description:
+          "your equipment protection is our top priority. It provides your system with power skips and surgeries.",
+      },
+      {
+        icon: "/icon-service-benefit-3.svg",
+        heading: "Compliance",
+        titleKey: "compliance_title",
+        descriptionKey: "compliance_description",
+        description:
+          "it supports companies in fulfilment of regulatory requirements and data safety.",
+      },
+    ],
+  };
+
+  const whychooseus = [
     {
-      icon: "/icon-service-benefit-1.svg",
-      heading: "Engineering Services",
+      heading: "Comprehensive UPS Solutions",
+      titleKey: "ups_solutions_why_choose_for_ups_title",
+      descriptionKey: "ups_solutions_why_choose_for_ups_content",
       description:
-        "We provide expert UPS engineering services and troubleshooting support to ensure seamless operation and reliability of your power protection systems.",
-      delay: "0s",
+        "Gulf Horizon Tele Est provides the highest range of services, containing custom UPS design, installation, and maintenance for data centers, industrial systems, and outdoor environments, committed to remarkable energy backup that fulfills your requirements.",
     },
     {
-      icon: "/icon-service-benefit-2.svg",
-      heading: "Maintenance Services",
+      heading: "Trusted Expertise and Partnerships",
+      titleKey: "ups_solutions_trusted_expertise_and_partnerships_title",
+      descriptionKey:
+        "ups_solutions_trusted_expertise_and_partnerships_content",
       description:
-        "We offer comprehensive UPS maintenance services to maximize system performance and ensure uninterrupted power protection for your operations.",
-      delay: "0.25s",
+        "As an authorized dealer of top brands like Schneider Electric and a distributor of Reliability Power Systems in the MENA region, we offer high-quality, basic parts of UPS systems for the highest efficiency and long-lasting use.",
     },
     {
-      icon: "/icon-service-benefit-3.svg",
-      heading: "Rental Solutions",
+      heading: "Nationwide Service and Flexibility",
+      titleKey: "ups_solutions_nationwide_service_and_flexibility_title",
+      descriptionKey:
+        "ups_solutions_nationwide_service_and_flexibility_content",
       description:
-        "We provide flexible UPS rental solutions to meet your temporary power needs, ensuring reliable protection for any situation.",
-      delay: "0.5s",
+        "Even if you want UPS rentals for events, industrial-grade systems, or maintenance services in Riyadh, Jeddah, Dammam, or Makkah, Gulf Horizon Tele Est is committed to fast, professional, and measuring solutions throughout Saudi Arabia.",
     },
   ];
 
   return (
     <>
-      <PageHeader
-        title="UPS System"
-        backgroundImage="/upsbanner.jpg"
-        backto="Home"
-        breadcrumbs={[{ name: "UPS", link: "/", active: true }]}
-      />
+      <PageHeader pageHeader={pageHeader} />
       <ServiceSingle
         mainPageContent={mainPageContent}
         Sidebarcategories={Sidebarcategories}
       />
 
-      <ServiceBenefit
-        items={benefitItems}
-        heading=" Engineering Services"
-        description="At GHTE, we don’t just provide superior products – we also offer a
-            full range of engineering services to ensure your UPS system is
-            customized, installed, and maintained to the highest standards. Our
-            services include:"
-      />
-      <WhyChooseUs
-        heading="Innovation solutions"
-        text="We blend creativity and technology to tackle your toughest
-                  challenges. Our forward-thinking approach and cutting-edge
-                  tools ensure solutions that exceed expectations and drive
-                  real, impactful results."
-        heading2=" Quality craftsmanship"
-        text2="We pride ourselves on meticulous attention to detail and
-                  superior craftsmanship. Our commitment to excellence ensures
-                  every project is completed with precision, delivering results
-                  that stand the test of time."
-        heading3="Expertise and Experience"
-        text3=" With years of industry experience and deep expertise, we bring
-                  a wealth of knowledge to every project. Our skilled team
-                  delivers exceptional results, leveraging proven methods to
-                  achieve your goals effectively."
-      />
+      <ServiceBenefit items={benefitItems} />
+      <WhyChooseUs whychooseus={whychooseus} />
       <CtaBox />
       <VendorSlider />
     </>

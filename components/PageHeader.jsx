@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 import Navbar from "./Navbar";
 import { useRouter } from "next/navigation";
 
-const PageHeader = ({ title, breadcrumbs, backgroundImage, backto }) => {
+const PageHeader = ({ pageHeader }) => {
   const router = useRouter();
   return (
     <div
       className="relative bg-black bg-opacity-40 md:rounded-3xl md:m-10 m-0 rounded-none"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${pageHeader.backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -21,14 +21,13 @@ const PageHeader = ({ title, breadcrumbs, backgroundImage, backto }) => {
           {/* Page Header Box Start */}
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight tracking-tight"
-            data-cursor="-opaque"
-            data-key="aboutmenu"
+            data-translate-key={pageHeader.titleKey}
           >
-            {title}
+            {pageHeader.title}
           </h1>
           <nav>
             <ol className="flex justify-center space-x-4 text-sm md:text-lg font-semibold">
-              {breadcrumbs.map((breadcrumb, index) => (
+              {pageHeader.breadcrumbs.map((breadcrumb, index) => (
                 <li
                   key={index}
                   className={`capitalize ${
@@ -42,10 +41,14 @@ const PageHeader = ({ title, breadcrumbs, backgroundImage, backto }) => {
                       router.push(breadcrumb.link);
                     }}
                     className="text-white"
+                    data-translate-key={pageHeader.backtokey}
                   >
-                    {backto} /{" "}
-                  </button>
-                  <span> {breadcrumb.name}</span>
+                    {pageHeader.backto}
+                  </button>{" "}
+                  /{" "}
+                  <span data-translate-key={pageHeader.titleKey}>
+                    {breadcrumb.name}
+                  </span>
                 </li>
               ))}
             </ol>

@@ -17,7 +17,7 @@ const CountCard = ({
       <div className="relative z-10 pb-6 mb-6">
         <img src={icon} alt={heading} />
         <h3
-          className="text-2xl lg:text-3xl font-medium  mt-10 mb-5 text-primary"
+          className="text-2xl lg:text-3xl font-medium mt-10 mb-5 text-primary"
           data-translate-key={datatranslatekeyheading}
         >
           {heading}
@@ -30,7 +30,7 @@ const CountCard = ({
         </p>
       </div>
       <div className="relative z-10 text-start border-t py-5 w-full">
-        <h3 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold  text-primary">
+        <h3 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
           {count}
           {unit}
         </h3>
@@ -45,20 +45,7 @@ const CountCard = ({
   );
 };
 
-const WhyChooseUs = ({
-  heading,
-  heading2,
-  heading3,
-  text,
-  text2,
-  text3,
-  datatranslatekeyheading,
-  datatranslatekeytext,
-  datatranslatekeyheading2,
-  datatranslatekeytext2,
-  datatranslatekeyheading3,
-  datatranslatekeytext3,
-}) => {
+const WhyChooseUs = ({ whychooseus }) => {
   const [counts, setCounts] = useState([0, 0, 0]);
 
   const startCountAnimation = (index, endValue) => {
@@ -96,7 +83,7 @@ const WhyChooseUs = ({
             Why Choose Us?
           </h3>
           <h2
-            className="text-3xl sm:text-3xl px-4 md:text-4xl lg:text-5xl font-bold  text-primary my-8"
+            className="text-3xl sm:text-3xl px-4 md:text-4xl lg:text-5xl font-bold text-primary my-8"
             data-translate-key="main_page_why_chooseheading"
           >
             Why Choose Gulf Horizon Telecom Est?
@@ -114,39 +101,32 @@ const WhyChooseUs = ({
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <CountCard
-            icon="/icon-why-choose-1.svg"
-            heading={heading}
-            text={text}
-            count={counts[0]}
-            unit="+"
-            subtext="Projects Delivered"
-            subtextdatakey="Projects_Delivered"
-            datatranslatekeyheading={datatranslatekeyheading}
-            datatranslatekeytext={datatranslatekeytext}
-          />
-          <CountCard
-            icon="/icon-why-choose-2.svg"
-            heading={heading2}
-            text={text2}
-            count={counts[1]}
-            unit="+"
-            subtext="Happy Clients"
-            subtextdatakey="Happy_Clients"
-            datatranslatekeyheading={datatranslatekeyheading2}
-            datatranslatekeytext={datatranslatekeytext2}
-          />
-          <CountCard
-            icon="/icon-why-choose-3.svg"
-            heading={heading3}
-            text={text3}
-            count={counts[2]}
-            unit="%"
-            subtext="Client Satisfaction"
-            subtextdatakey="Client_Satisfaction"
-            datatranslatekeyheading={datatranslatekeyheading3}
-            datatranslatekeytext={datatranslatekeytext3}
-          />
+          {whychooseus.map((item, index) => (
+            <CountCard
+              key={index}
+              icon={`/icon-why-choose-${index + 1}.svg`}
+              heading={item.heading}
+              text={item.description}
+              count={counts[index]}
+              unit={index === 2 ? "%" : "+"}
+              subtext={
+                index === 0
+                  ? "Projects Delivered"
+                  : index === 1
+                  ? "Happy Clients"
+                  : "Client Satisfaction"
+              }
+              subtextdatakey={
+                index === 0
+                  ? "Projects_Delivered"
+                  : index === 1
+                  ? "Happy_Clients"
+                  : "Client_Satisfaction"
+              }
+              datatranslatekeyheading={item.titleKey}
+              datatranslatekeytext={item.descriptionKey}
+            />
+          ))}
         </div>
       </div>
     </div>

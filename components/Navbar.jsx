@@ -127,12 +127,14 @@ const Navbar = () => {
                   >
                     Generators
                   </Link>
-                  <Link
-                    href="/projects/project1"
+                  <button
+                    onClick={() => {
+                      router.push("/load-bank-rental-saudi-arabia");
+                    }}
                     className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
                   >
                     Load Bank
-                  </Link>
+                  </button>
                   <Link
                     href="/projects/project1"
                     className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
@@ -257,13 +259,14 @@ const Navbar = () => {
                 <div className="w-full flex flex-col items-center justify-center py-2 rounded-md">
                   {category === "Power" && (
                     <>
-                      <Link
-                        href="/projects/project1"
+                      <button
                         className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
+                        onClick={() => {
+                          router.push("/ups-saudi-arabia");
+                        }}
                       >
                         UPS System
-                      </Link>
+                      </button>
                       <Link
                         href="/projects/project1"
                         className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
@@ -278,13 +281,14 @@ const Navbar = () => {
                       >
                         Genrator's
                       </Link>
-                      <Link
-                        href="/projects/project1"
+                      <button
+                        onClick={() => {
+                          router.push("/load-bank-rental-saudi-arabia");
+                        }}
                         className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={closeMenu}
                       >
                         Load Bank's
-                      </Link>
+                      </button>
                       <Link
                         href="/projects/project1"
                         className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"

@@ -165,7 +165,7 @@ const ServiceSingle = ({ Sidebarcategories = [], mainPageContent }) => {
               </div>
             </div>
 
-            <Advantages />
+            {/* <Advantages /> */}
           </div>
         </div>
       </div>
