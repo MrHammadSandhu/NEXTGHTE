@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import PropTypes from "prop-types";
 import Navbar from "./Navbar";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const PageHeader = ({ title, breadcrumbs, backgroundImage, backto }) => {
+  const router = useRouter();
   return (
     <div
       className="relative bg-black bg-opacity-40 md:rounded-3xl md:m-10 m-0 rounded-none"
@@ -35,24 +37,15 @@ const PageHeader = ({ title, breadcrumbs, backgroundImage, backto }) => {
                       : "text-white"
                   }`}
                 >
-                  {breadcrumb.link ? (
-                    <a
-                      href={breadcrumb.link}
-                      className="hover:underline underline-offset-4"
-                    >
-                      {breadcrumb.name}
-                    </a>
-                  ) : (
-                    <>
-                      <Link href={breadcrumb.link} className="text-white">
-                        {backto} /{" "}
-                      </Link>
-                      <span>{breadcrumb.name}</span>
-                    </>
-                  )}
-                  {index < breadcrumbs.length - 1 && (
-                    <span className="mx-2 text-white">/</span>
-                  )}
+                  <button
+                    onClick={() => {
+                      router.push(breadcrumb.link);
+                    }}
+                    className="text-white"
+                  >
+                    {backto} /{" "}
+                  </button>
+                  <span> {breadcrumb.name}</span>
                 </li>
               ))}
             </ol>

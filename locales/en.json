@@ -147,5 +147,25 @@
   "cta_button": "Get a Free Quote Today!",
 
   "section_title_vendor": "PRINCIPAL PARTNERS",
-  "section_description_vendor": "At GHTE, we collaborate with industry-leading partners to deliver cutting-edge technologies and innovative solutions. Our partnerships with renowned global brands ensure our clients receive the highest quality products backed by expertise and reliability across various industries."
+  "section_description_vendor": "At GHTE, we collaborate with industry-leading partners to deliver cutting-edge technologies and innovative solutions. Our partnerships with renowned global brands ensure our clients receive the highest quality products backed by expertise and reliability across various industries.",
+
+  "other_power_products_title": "Other Power Products",
+  "Batteries": "Batteries",
+  "Load_Banks": "Load Banks",
+  "Generators": "Generators",
+  "AVR": "AVR's",
+
+  "sidebar_title": "You still have a question?",
+  "sidebar_description": "If you cannot find an answer to your question in our FAQ, you can always contact us.",
+  "ups_system_title": "UPS System",
+  "ups_system_intro": "At Gulf Horizon Telecom, we consider the important role Uninterruptible Power Supply (UPS) systems play in the safety of your operations. We are committed that each system is unique and designed by proper personal planning. Our considerable portfolio of UPS systems ensures uninterrupted power for a large range of applications. Preservation of loss of data and business quality mainly depends on UPS solutions. As authorized dealers for Schneider Electric and the sole distributors for RELIABILITY POWER SYSTEMS in the MENA region, we guarantee to deliver high-quality products and exceptional support. With over 20 years of experience, a hardworking team of factory-trained engineers, and more than 500 satisfied clients, we provide dependable and customized power protection solutions to fulfill your requirements. During voltage fluctuations or power outages, UPS provides a reliable power source that delivers electricity to various vital equipment.",
+  "ups_solutions_title": "Our UPS Solutions Categories",
+  "outdoor_ups_title": "Outdoor UPS Systems",
+  "outdoor_ups_description": "Outdoor UPS systems are committed to remarkable power systems in severe conditions. These solutions are best for remote locations and challenging climates, providing outdoor power protection systems that withstand the test of time. UPS provides a stable and clear power supply for various types of equipment. In case of power failure, it has its own stored backup data.",
+  "industrial_ups_title": "Industrial UPS Solutions",
+  "industrial_ups_description": "Our industrial-grade UPS systems are mainly designed for heavy-duty applications, providing robust power protection for factories, manufacturing plants, and other demanding environments. With industrial UPS solutions, your operations can always remain uninterrupted, even during power outages.",
+  "modular_ups_title": "Modular UPS Solutions",
+  "modular_ups_description": "Scalability is essential for businesses with growing power demands. Our modular UPS systems are designed to adapt to your requirements. These solutions offer scalable configurations, making them ideal for data centers, corporate facilities, and more.",
+  "data_center_ups_title": "Data Center UPS Systems",
+  "data_center_ups_description": "Our data center UPS solutions are designed for harsh environments with capacities ranging from 600VA to 2 MVA. These high-power capacity systems ensure your IT systems operate smoothly and safely to protect your vital data."
 }
