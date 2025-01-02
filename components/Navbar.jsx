@@ -7,18 +7,15 @@ import { useRouter } from "next/navigation";
 
 const CustomLink = ({ href, title, className = "", toggle }) => {
   const router = useRouter();
-  // const handleClick = () => {
-  //   if (toggle) toggle();
-
-  // };
+  const handleClick = () => {
+    if (toggle) toggle();
+  };
 
   return (
-    <button
+    <Link
+      href={`${href}`}
       className={`${className} relative group text-[18px] text-light hover:text-secondary`}
-      // onClick={handleClick}
-      onClick={() => {
-        router.push(`${href}`);
-      }}
+      onClick={handleClick}
     >
       {title}
       <span
@@ -26,14 +23,13 @@ const CustomLink = ({ href, title, className = "", toggle }) => {
       >
         &nbsp;
       </span>
-    </button>
+    </Link>
   );
 };
 
 const Navbar = () => {
   const [open, setOpen] = useState(false); // Mobile menu state
   const [activeDropdown, setActiveDropdown] = useState(null); // Track which dropdown is open
-  const router = useRouter();
 
   const toggleMenu = () => {
     setOpen(!open);
@@ -107,34 +103,30 @@ const Navbar = () => {
             <div className="absolute hidden group-hover:block bg-primary text-light shadow-lg py-4 rounded-lg w-[200px] -left-5">
               {category === "Power" && (
                 <>
-                  <button
-                    onClick={() => {
-                      router.push("/ups-saudi-arabia");
-                    }}
+                  <Link
+                    href="/ups-saudi-arabia"
                     className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
                   >
                     UPS System
-                  </button>
+                  </Link>
                   <Link
-                    href="/projects/project1"
+                    href="/battery-solutions-saudi-arabia"
                     className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
                   >
                     Batteries
                   </Link>
                   <Link
-                    href="/projects/project1"
+                    href="/generators-saudi-arabia"
                     className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
                   >
                     Generators
                   </Link>
-                  <button
-                    onClick={() => {
-                      router.push("/load-bank-rental-saudi-arabia");
-                    }}
+                  <Link
+                    href="/load-bank-rental-saudi-arabia"
                     className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
                   >
                     Load Bank
-                  </button>
+                  </Link>
                   <Link
                     href="/projects/project1"
                     className="block hover:text-secondary hover:translate-x-1 transition-all py-2 px-4"
@@ -259,36 +251,34 @@ const Navbar = () => {
                 <div className="w-full flex flex-col items-center justify-center py-2 rounded-md">
                   {category === "Power" && (
                     <>
-                      <button
+                      <Link
+                        href="/ups-saudi-arabia"
                         className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
-                        onClick={() => {
-                          router.push("/ups-saudi-arabia");
-                        }}
+                        onClick={closeMenu}
                       >
                         UPS System
-                      </button>
+                      </Link>
                       <Link
-                        href="/projects/project1"
+                        href="/battery-solutions-saudi-arabia"
                         className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
                         onClick={closeMenu}
                       >
                         Batteries
                       </Link>
                       <Link
-                        href="/projects/project1"
+                        href="/generators-saudi-arabia"
                         className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
                         onClick={closeMenu}
                       >
                         Genrator's
                       </Link>
-                      <button
-                        onClick={() => {
-                          router.push("/load-bank-rental-saudi-arabia");
-                        }}
+                      <Link
+                        href="/load-bank-rental-saudi-arabia"
                         className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"
+                        onClick={closeMenu}
                       >
                         Load Bank's
-                      </button>
+                      </Link>
                       <Link
                         href="/projects/project1"
                         className="block hover:text-secondary hover:translate-x-1 transition-all px-4 text-light mb-4"

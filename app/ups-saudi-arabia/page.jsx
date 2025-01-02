@@ -37,7 +37,7 @@ const page = () => {
       {
         name: "Batteries",
         titleKey: "Batteries",
-        link: "/",
+        link: "/battery-solutions-saudi-arabia",
       },
       {
         name: "Load Banks",
@@ -47,7 +47,7 @@ const page = () => {
       {
         name: "Generators",
         titleKey: "Generators",
-        link: "/",
+        link: "/generators-saudi-arabia",
       },
       { name: "AVR's", titleKey: "AVR", link: "/" },
     ],
